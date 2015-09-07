@@ -1,2 +1,7 @@
 * -crlf
-
+VENV
+*.pyc
+__pycache__
+tables/__pycache__/*
+mmm/__pycache__/*
+trips/__pycache__/*
