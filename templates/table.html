@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <title>Mi's Table</title>
-    <link href="//fonts.googleapis.com/css?family=Lemon" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="//djangogirlstaipei.github.io/assets/css/style.css" rel="stylesheet" type="text/css">
 </head>
@@ -21,7 +21,7 @@
             <div class="post">
                 <div class="post-heading">
                     <h2 class="title">
-                        <a href="#">{{ table.title }}</a>
+                        <a href="{% url 'table_detail' id=table.id %}">{{ table.meal }}</a>
                     </h2>
                     <div class="date">{{ table.created_at|date:"Y / m / d" }}</div>
                 </div>
@@ -33,11 +33,12 @@
                 <div class="thumbnail thumbnail-default"></div>
                 {% endif %}
                 <div class="post-content read-more-block">
-                    {{ table.content }}
+                    {{ table.chef }}
+                    {{ table.recipes }}
                 </div>
                 <div class="post-footer">
-                    <a class="read-more" href="#">
-                        Read More <i class="fa fa-arrow-right"></i>
+                    <a class="read-more" href="{% url 'table_detail' id=table.id %}">
+                        Taste More <i class="fa fa-arrow-right"></i>
                     </a>
                 </div>
             </div>

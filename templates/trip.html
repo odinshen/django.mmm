@@ -21,7 +21,7 @@
             <div class="post">
                 <div class="post-heading">
                     <h2 class="title">
-                        <a href="#">{{ trip.title }}</a>
+                        <a href="{% url 'trip_detail' id=trip.id %}">{{ trip.title }}</a>
                     </h2>
                     <div class="date">{{ trip.created_at|date:"Y / m / d" }}</div>
                 </div>
@@ -36,8 +36,8 @@
                     {{ trip.content }}
                 </div>
                 <div class="post-footer">
-                    <a class="read-more" href="#">
-                        Read More <i class="fa fa-arrow-right"></i>
+                    <a class="read-more" href="{% url 'trip_detail' id=trip.id %}">
+                        Watch More <i class="fa fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
